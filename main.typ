@@ -61,3 +61,7 @@ L’analyse révèle que la taille de la carte et le nombre de gemmes ont tous d
 
 Ce comportement semble s'expliquer par la nécessité de considérer toutes les combinaisons possibles des positions des gemmes sur la carte. Par conséquent, plus le nombre de gemmes et la taille de la carte augmentent, plus le nombre de calculs nécessaires s'accroît, ce qui alourdit le temps d'exécution de façon exponentielle.
 
+= Améliorations potentielles
+Pour optimiser les performances de l'algorithme, plusieurs améliorations pourraient être envisagées. Tout d'abord, en ce qui concerne la fonction de vraisemblance, nous avons utilisé la formule $2^(-d)$ pour modéliser l'impact de la distance. Une alternative à explorer serait d'utiliser une distribution gaussienne, ou normale, pour ajuster plus finement la vraisemblance en fonction de la distance.
+
+En outre, dans la phase d'inférence, la mise en place d'un système de mise en cache pour les calculs intermédiaires pourrait également améliorer les performances. En stockant les résultats de calculs déjà effectués pour une configuration donnée, il serait possible de vérifier le cache avant d’effectuer un calcul. Si le résultat pour cette configuration est déjà disponible, il serait réutilisé, évitant ainsi des calculs redondants et réduisant le temps d'exécution global.
