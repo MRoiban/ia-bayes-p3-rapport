@@ -51,9 +51,13 @@ Ensuite, nous évaluerons l'efficacité de l'inférence par énumération en ana
 Deux paramètres seront manipulés : la taille de la carte et le nombre de gemmes présentes. Nous mesurerons ensuite le temps d'exécution requis pour effectuer l'inférence sur chaque configuration de carte et de nombre de gemmes.
 
 == Justification
-
 La formule de likelihood: $2^(-d)$, où $d$ représente la distance euclidienne, est utilisée ici pour modéliser l'effet de l'éloignement sur la vraisemblance.  Cette formule implique que, plus la distance $d$ entre la position courante d'une cellule et la position d'une gemme est grande, plus la vraisemblance diminue. En effet, à mesure que $d$ augmente, $2^(-d)$ décroît, ce qui réduit la probabilité de présence d'une gemme à un certain endroit.
 
 
 
 = Résultats
+#figure(image("img/image_664.png"))
+L’analyse révèle que la taille de la carte et le nombre de gemmes ont tous deux un impact significatif sur les performances de l'algorithme d'inférence. De manière notable, lorsque la taille de la carte augmente, les performances restent relativement stables pour des configurations avec une ou deux gemmes, indépendamment de la taille de la carte. Cependant, à partir de trois gemmes, le temps d'exécution commence à croître de manière exponentielle avec chaque gemme supplémentaire. Cette augmentation devient de plus en plus prononcée avec l'accroissement de la taille de la carte.
+
+Ce comportement semble s'expliquer par la nécessité de considérer toutes les combinaisons possibles des positions des gemmes sur la carte. Par conséquent, plus le nombre de gemmes et la taille de la carte augmentent, plus le nombre de calculs nécessaires s'accroît, ce qui alourdit le temps d'exécution de façon exponentielle.
+
